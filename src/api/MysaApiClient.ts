@@ -420,11 +420,13 @@ export class MysaApiClient {
           ? 1
           : device.Model.startsWith('AC-V1')
             ? 2
-            : device.Model.startsWith('BB-V2')
-              ? device.Model.endsWith('-L')
-                ? 5
-                : 4
-              : 0,
+            : device.Model.startsWith('INF-V1')
+              ? 3
+              : device.Model.startsWith('BB-V2')
+                ? device.Model.endsWith('-L')
+                  ? 5
+                  : 4
+                : 0,
         cmd: [
           {
             tm: -1,
